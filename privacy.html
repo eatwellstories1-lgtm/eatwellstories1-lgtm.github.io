@@ -19,6 +19,12 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"%3E%3Cpath fill="%232E7D46" d="M16 3C9 8 5 14 5 20a11 11 0 0 0 22 0c0-6-4-12-11-17z"/%3E%3C/svg%3E">
 <link rel="stylesheet" href="assets/css/main.css">
 
+<!-- ews-ga4-snippet -->
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied'});
+gtag('set','allow_google_signals',false);</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SH5CX1KMCM"></script>
+<script>gtag('js',new Date());gtag('config','G-SH5CX1KMCM');</script>
 </head><body class="page-"><a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="wrap header-inner">
@@ -93,5 +99,27 @@
   </div>
 </footer>
 <script src="assets/js/main.js" defer></script>
+<!-- ews-consent-banner -->
+<div id="ews-consent" style="position:fixed;left:0;right:0;bottom:0;z-index:9999;background:#1f3d2b;color:#fff;font:14px/1.4 system-ui,Arial,sans-serif;padding:10px 16px;display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap;">
+<span>This site uses anonymous Google Analytics cookies to understand visits. You can accept or decline.</span>
+<button type="button" data-c="1" style="background:#2E7D46;color:#fff;border:0;border-radius:6px;padding:6px 14px;cursor:pointer;">Accept analytics</button>
+<button type="button" data-c="0" style="background:transparent;color:#fff;border:1px solid #9cc7a8;border-radius:6px;padding:6px 14px;cursor:pointer;">Decline</button>
+</div>
+<script>
+(function(){
+  var bar=document.getElementById('ews-consent');
+  function hide(){bar.style.display='none';}
+  function decide(grant){
+    gtag('consent','update',{analytics_storage:grant?'granted':'denied',ad_storage:grant?'granted':'denied',ad_user_data:grant?'granted':'denied',ad_personalization:grant?'granted':'denied'});
+    try{localStorage.setItem('ews_consent',grant?'1':'0');}catch(e){}
+    hide();
+  }
+  var saved=null;
+  try{saved=localStorage.getItem('ews_consent');}catch(e){}
+  if(saved==='1'){gtag('consent','update',{analytics_storage:'granted',ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted'});hide();return;}
+  if(saved==='0'){hide();return;}
+  bar.querySelectorAll('button').forEach(function(bt){bt.addEventListener('click',function(){decide(bt.getAttribute('data-c')==='1');});});
+})();
+</script>
 </body>
 </html>
