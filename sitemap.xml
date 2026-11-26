@@ -126,4 +126,10 @@
     <changefreq>weekly</changefreq>
     <priority>0.3</priority>
   </url>
+  <url>
+    <loc>https://eatwellstories1-lgtm.github.io/lead-magnet.html</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>

@@ -220,3 +220,13 @@ th{background:var(--green-100);color:var(--green-900)}
 
 @media (max-width:960px){.search-results{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:640px){.nav-search-label{display:none}.search-results{grid-template-columns:1fr}}
+
+/* lead magnet page */
+.lead-actions{display:flex;flex-wrap:wrap;gap:12px;margin:18px 0 24px}
+.btn-lead{background:var(--orange)}
+.btn-lead:hover{background:var(--green-900)}
+.lead-form{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;max-width:640px}
+.lead-form-title{font-size:1.15rem;margin-bottom:10px}
+.lead-note{font-size:.83rem;color:var(--muted);margin:8px 0 0}
+.lead-band-cta{margin:6px 0 12px}
+.newsletter-band .btn{background:var(--orange)}
