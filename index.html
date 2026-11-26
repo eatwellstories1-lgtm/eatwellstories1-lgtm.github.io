@@ -81,8 +81,9 @@ gtag('set','allow_google_signals',false);</script>
       <a class="btn" href="articles/50-super-healthy-foods/">Read the pillar guide: 50 super healthy foods</a>
       <a class="btn btn-outline" href="categories/diet-guides.html">Browse diet guides</a>
     </div>
-    <form class="hero-search" role="search" data-filter-target=".card-grid-latest">
-      <input type="search" placeholder="Search guides: eggs, snacks, lunch, Mediterranean…" aria-label="Search guides">
+    <form class="hero-search" role="search" action="search.html" method="get">
+      <label class="visually-hidden" for="hero-q">Search guides</label>
+      <input id="hero-q" name="q" type="search" placeholder="Search guides: eggs, snacks, lunch, Mediterranean…" aria-label="Search guides">
     </form>
   </div>
 </section>

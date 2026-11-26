@@ -1,0 +1,86 @@
+{
+  "site": "EatWellStories",
+  "base": "https://eatwellstories1-lgtm.github.io/",
+  "articles": [
+    {
+      "slug": "50-super-healthy-foods",
+      "title": "A List of 50 Super Healthy Foods",
+      "url": "articles/50-super-healthy-foods/",
+      "category": "Ingredients",
+      "description": "Our pillar guide: 50 evidence-backed super healthy foods grouped by food group, with portions and quick ways to use them in daily meals.",
+      "image": "assets/img/50-super-healthy-foods.jpg",
+      "minutes": 13,
+      "keywords": "super healthy foods, healthiest foods to eat, nutritious foods list, balanced diet foods, grocery list, vegetables fruit protein whole grains nuts"
+    },
+    {
+      "slug": "are-tomatoes-good-for-you",
+      "title": "Are Tomatoes Good for You? Benefits, Nutrition and Ways to Enjoy Them",
+      "url": "articles/are-tomatoes-good-for-you/",
+      "category": "Ingredients",
+      "description": "Tomato nutrition, lycopene explained, raw versus cooked tomatoes, and simple ways to enjoy them in salads, sauces and soups.",
+      "image": "assets/img/are-tomatoes-good-for-you.jpg",
+      "minutes": 7,
+      "keywords": "are tomatoes good for you, tomato nutrition, lycopene benefits, raw vs cooked tomatoes, tomato calories, vegetables, salad, sauce"
+    },
+    {
+      "slug": "healthiest-foods-for-breakfast",
+      "title": "12 of the Healthiest Foods to Eat for Breakfast",
+      "url": "articles/healthiest-foods-for-breakfast/",
+      "category": "Breakfast",
+      "description": "Twelve nutrient-dense breakfast foods, from eggs and oats to Greek yoghurt, with quick combinations for a balanced morning plate.",
+      "image": "assets/img/healthiest-foods-for-breakfast.jpg",
+      "minutes": 5,
+      "keywords": "healthy breakfast foods, best breakfast foods, balanced breakfast ideas, high-protein breakfast, oats eggs yoghurt, morning meal"
+    },
+    {
+      "slug": "easy-dinner-ideas",
+      "title": "Easy Dinner Ideas – Healthier Families",
+      "url": "articles/easy-dinner-ideas/",
+      "category": "Dinners",
+      "description": "Straightforward, healthier family dinners: traybakes, soups, stir-fries and bean dishes, with make-ahead tips to cut weeknight effort.",
+      "image": "assets/img/easy-dinner-ideas.jpg",
+      "minutes": 6,
+      "keywords": "easy dinner ideas, quick healthy dinners, family dinner recipes, meal prep dinners, weeknight, traybake, soup, stir fry"
+    },
+    {
+      "slug": "are-eggs-good-for-you",
+      "title": "Are Eggs Good for You? Benefits, Nutrition and Easy Ways to Cook Them",
+      "url": "articles/are-eggs-good-for-you/",
+      "category": "Ingredients",
+      "description": "Egg nutrition facts, the evidence on cholesterol, boiled versus fried eggs, and quick ways to enjoy eggs for breakfast, lunch and snacks.",
+      "image": "assets/img/are-eggs-good-for-you.jpg",
+      "minutes": 7,
+      "keywords": "are eggs good for you, egg nutrition, health benefits of eggs, how many eggs a day, boiled vs fried eggs, egg yolks nutrition, protein, breakfast eggs"
+    },
+    {
+      "slug": "healthy-snack-ideas",
+      "title": "20 Healthy Snack Ideas That Are Filling and Nutritious",
+      "url": "articles/healthy-snack-ideas/",
+      "category": "Snacks",
+      "description": "Twenty protein-plus-fibre snacks, from boiled eggs and fruit with nuts to yoghurt and veggie sticks, with work-ready swaps for cravings.",
+      "image": "assets/img/healthy-snack-ideas.jpg",
+      "minutes": 7,
+      "keywords": "healthy snack ideas, healthy snacks, filling snacks, high-protein snacks, healthy snacks for work, nuts fruit yoghurt veggie sticks, afternoon cravings"
+    },
+    {
+      "slug": "healthy-lunch-ideas-for-work",
+      "title": "Healthy Lunch Ideas for Work: 15 Quick Packed Lunches You Can Prep Ahead",
+      "url": "articles/healthy-lunch-ideas-for-work/",
+      "category": "Lunches",
+      "description": "Fifteen prep-ahead work lunches: no-cook boxes, warm reheat bowls and plant-based options, plus a Sunday meal-prep system.",
+      "image": "assets/img/healthy-lunch-ideas-for-work.jpg",
+      "minutes": 6,
+      "keywords": "healthy lunch ideas, healthy lunch ideas for work, packed lunch ideas, meal prep lunches, healthy work lunches, lunchbox, batch prep"
+    },
+    {
+      "slug": "mediterranean-diet-for-beginners",
+      "title": "Mediterranean Diet for Beginners: Benefits, Foods to Eat and a Simple Starter Plan",
+      "url": "articles/mediterranean-diet-for-beginners/",
+      "category": "Diet Guides",
+      "description": "A beginner's Mediterranean diet guide: evidence-based benefits, the core food list, a simple 7-day starter plan and easy swaps.",
+      "image": "assets/img/mediterranean-diet-for-beginners.jpg",
+      "minutes": 7,
+      "keywords": "mediterranean diet, mediterranean diet for beginners, mediterranean diet food list, mediterranean diet meal plan, benefits of the mediterranean diet, mediterranean recipes, olive oil beans fish"
+    }
+  ]
+}
