@@ -179,6 +179,128 @@
     });
   }
 
+  /* ---------- Homepage category filter chips ---------- */
+  var latestGrid = document.querySelector(".card-grid-latest");
+  if (latestGrid) {
+    var cards = Array.prototype.slice.call(latestGrid.querySelectorAll(".card"));
+    var cats = [];
+    cards.forEach(function (c) {
+      var b = c.querySelector(".badge");
+      var t = b ? b.textContent.trim() : "";
+      if (t && cats.indexOf(t) < 0) { cats.push(t); }
+      c.setAttribute("data-category", t);
+    });
+    var chipWrap = document.createElement("div");
+    chipWrap.className = "filter-chips";
+    chipWrap.setAttribute("role", "group");
+    chipWrap.setAttribute("aria-label", "Filter guides by category");
+    var status = document.createElement("p");
+    status.className = "filter-status";
+    status.setAttribute("aria-live", "polite");
+    var allBtn = document.createElement("button");
+    allBtn.type = "button";
+    allBtn.className = "filter-chip active";
+    allBtn.setAttribute("aria-pressed", "true");
+    allBtn.textContent = "All guides";
+    allBtn.dataset.cat = "";
+    chipWrap.appendChild(allBtn);
+    cats.forEach(function (cat) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "filter-chip";
+      b.setAttribute("aria-pressed", "false");
+      b.textContent = cat;
+      b.dataset.cat = cat;
+      chipWrap.appendChild(b);
+    });
+    latestGrid.parentNode.insertBefore(chipWrap, latestGrid);
+    latestGrid.parentNode.insertBefore(status, latestGrid.nextSibling);
+    function applyFilter(cat) {
+      var shown = 0;
+      cards.forEach(function (c) {
+        var show = !cat || c.getAttribute("data-category") === cat;
+        c.hidden = !show;
+        if (show) { shown++; }
+      });
+      status.textContent = shown + " guide" + (shown === 1 ? "" : "s") + " shown" + (cat ? " in " + cat : "") + ".";
+    }
+    chipWrap.addEventListener("click", function (e) {
+      var b = e.target.closest(".filter-chip");
+      if (!b) { return; }
+      chipWrap.querySelectorAll(".filter-chip").forEach(function (x) {
+        x.classList.remove("active");
+        x.setAttribute("aria-pressed", "false");
+      });
+      b.classList.add("active");
+      b.setAttribute("aria-pressed", "true");
+      applyFilter(b.dataset.cat);
+    });
+    applyFilter("");
+  }
+
+  /* ---------- Article share buttons (articles only) ---------- */
+  var articleMain = document.querySelector("article.article-main");
+  if (articleMain) {
+    var canonical = document.querySelector("link[rel=canonical]");
+    var shareUrl = canonical ? canonical.href : window.location.href;
+    var shareTitle = document.title;
+    var ogImage = document.querySelector('meta[property="og:image"]');
+    var mediaUrl = ogImage ? ogImage.content : shareUrl;
+    function enc(s) { return encodeURIComponent(s); }
+    var bar = document.createElement("div");
+    bar.className = "share-bar";
+    bar.setAttribute("aria-label", "Share this guide");
+    var html = "";
+    if (navigator.share) {
+      html += '<button type="button" class="share-btn" data-share="native">Share</button>';
+    }
+    html += '<button type="button" class="share-btn" data-share="copy">Copy link</button>' +
+      '<a class="share-btn" target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?url=' + enc(shareUrl) + '&text=' + enc(shareTitle) + '">Post on X</a>' +
+      '<a class="share-btn" target="_blank" rel="noopener" href="https://www.facebook.com/sharer/sharer.php?u=' + enc(shareUrl) + '">Share on Facebook</a>' +
+      '<a class="share-btn" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/button/?url=' + enc(shareUrl) + '&media=' + enc(mediaUrl) + '&description=' + enc(shareTitle) + '">Pin on Pinterest</a>';
+    bar.innerHTML = html;
+    var articleHead = articleMain.querySelector(".article-head");
+    articleHead.parentNode.insertBefore(bar, articleHead.nextSibling);
+    bar.addEventListener("click", function (e) {
+      var b = e.target.closest("[data-share]");
+      if (!b) { return; }
+      e.preventDefault();
+      if (b.dataset.share === "native" && navigator.share) {
+        navigator.share({ title: shareTitle, url: shareUrl }).catch(function () {});
+      } else if (b.dataset.share === "copy") {
+        var done = function () {
+          b.classList.add("copied");
+          b.textContent = "Link copied";
+          setTimeout(function () { b.classList.remove("copied"); b.textContent = "Copy link"; }, 1800);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(shareUrl).then(done, done);
+        } else {
+          var ta = document.createElement("textarea");
+          ta.value = shareUrl;
+          document.body.appendChild(ta);
+          ta.select();
+          try { document.execCommand("copy"); } catch (x) {}
+          ta.remove();
+          done();
+        }
+      }
+    });
+
+    /* Planner download card injected into the article aside */
+    var asideEl = document.querySelector(".article-aside");
+    if (asideEl) {
+      var planner = document.createElement("div");
+      planner.className = "aside-card";
+      planner.innerHTML =
+        "<h2>Free 7-Day meal planner</h2>" +
+        "<p>Balanced days, a categorized grocery list and prep tips in one free PDF.</p>" +
+        '<a class="btn" href="' + rootPrefix + 'assets/lead-magnet/7-day-healthy-meal-planner.pdf" download rel="noopener">Download the PDF</a> ' +
+        '<a class="btn btn-outline" href="' + rootPrefix + 'lead-magnet.html" style="margin-top:8px">About the planner</a>';
+      asideEl.appendChild(planner);
+    }
+  }
+
   /* ---------- Mark external links with rel noopener ---------- */
   document.querySelectorAll("a[href^='http']").forEach(function (a) {
     if (!a.getAttribute("rel")) { a.setAttribute("rel", "noopener"); }

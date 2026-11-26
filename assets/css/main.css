@@ -230,3 +230,24 @@ th{background:var(--green-100);color:var(--green-900)}
 .lead-note{font-size:.83rem;color:var(--muted);margin:8px 0 0}
 .lead-band-cta{margin:6px 0 12px}
 .newsletter-band .btn{background:var(--orange)}
+
+/* homepage category filter chips */
+.filter-chips{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 18px}
+.filter-chip{background:var(--paper);border:1px solid var(--line);color:var(--green-900);font-family:Arial,Helvetica,sans-serif;font-size:.88rem;padding:8px 16px;border-radius:999px;cursor:pointer}
+.filter-chip:hover{border-color:var(--green-500);background:var(--green-100)}
+.filter-chip.active{background:var(--green-700);border-color:var(--green-700);color:#fff}
+.filter-chip[aria-pressed="true"]{background:var(--green-700);color:#fff}
+.filter-status{font-family:Arial,Helvetica,sans-serif;font-size:.85rem;color:var(--muted);margin:6px 0 0;min-height:1.2em}
+
+/* article share bar */
+.share-bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:14px 0 8px;padding:12px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.share-bar::before{content:"Share this guide";font-family:Arial,Helvetica,sans-serif;font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-right:2px}
+.share-btn{display:inline-flex;align-items:center;gap:6px;background:var(--paper);border:1px solid var(--line);color:var(--green-700);text-decoration:none;font-family:Arial,Helvetica,sans-serif;font-size:.85rem;padding:7px 14px;border-radius:999px;cursor:pointer}
+.share-btn:hover{background:var(--green-100);border-color:var(--green-500);color:var(--green-900)}
+.share-btn.copied{background:var(--green-500);color:#fff;border-color:var(--green-500)}
+
+/* hero polish */
+.hero{padding:64px 0 48px}
+.hero-actions .btn-orange{background:var(--orange)}
+.hero-actions .btn-orange:hover{background:var(--green-900)}
+@media (max-width:640px){.hero{padding:40px 0 30px}}
