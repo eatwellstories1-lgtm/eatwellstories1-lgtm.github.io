@@ -301,6 +301,15 @@
     }
   }
 
+  /* ---------- Cookie preferences button: reopen the consent banner ---------- */
+  document.querySelectorAll("[data-cookie-preferences]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      try { localStorage.removeItem("ews_consent"); } catch (e) {}
+      var bar = document.getElementById("ews-consent");
+      if (bar) { bar.style.display = "flex"; }
+    });
+  });
+
   /* ---------- Mark external links with rel noopener ---------- */
   document.querySelectorAll("a[href^='http']").forEach(function (a) {
     if (!a.getAttribute("rel")) { a.setAttribute("rel", "noopener"); }
